@@ -2,9 +2,70 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/45/45552.png">
+    <title>Food Library</title>
   </head>
   <body>
+        <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Food2Fork</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-md-0" action="/search" name="search">
+          <input class="form-control" type="text" placeholder="Search" name="searchdate" >
+        </form>
+      </div>
+    </nav>
+    <br>
+
+    <div class="container">
+      <form class="search">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <img src="https://media.giphy.com/media/xTiQymjYza10NhOFDa/giphy.gif" alt="food" id="spoon">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="search-box">
+              <input id="searchFood" type="text" class="form-control" />
+              <i class="glyphicon glyphicon-search"></i>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <button type="submit" class="btn btn-lg btn-primary">Search</button>
+            </div>
+          </div>
+        </div>
+
+        <ul id="publisher">
+        </ul>
+
+      </div>
+      </form>
+
 
   </body>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container" id="foot">
+      <b><hr class="my-4"></b>
+      <p align="center">&#169; 2018 <a href="/" >Food Search App</a>, by Rio and Justin .</p>
+    </div>
+  </footer>
 </html>

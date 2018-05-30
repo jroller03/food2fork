@@ -27,12 +27,13 @@ $(document).ready(function() {
         $('#publisher').append(`<h1>Title ${recipe.title}</h1>`);
         $('#publisher').append(`<img id=\"pics\" src=\"${recipe.image_url}\" ><br>`);
         $('#publisher').append(`<li><b><em>Publisher: </b></em> ${recipe.publisher}</li>`);
-        $('#publisher').append(`<li><b><em>Url       :</b></em> ${recipe.f2f_url}</li>`);
-        $('#publisher').append(`<li><b><em>Source    :</b></em> ${recipe.source_url}</li>`);
+        $('#publisher').append(`<li><b><em>Url       :</b></em> <a target=\"_blank\"href="${recipe.f2f_url}">Food2Fork Recipe Link</a></li>`);
+        $('#publisher').append(`<li><b><em>Source    :</b></em> <a target=\"_blank\"href="${recipe.source_url}">Recipe Source Link</a></li>`);
         $('#publisher').append(`<li><b><em>Recipe Id : </b></em>${recipe.recipe_id}</li>`);
         $('#publisher').append(`<li><b><em>Rank:</b></em> ${recipe.social_rank}</li>`);
-        $('#publisher').append(`<li><b><em>Url:</b></em> ${recipe.publisher_url}</li><br>`);
+        $('#publisher').append(`<li><b><em>Url:</b></em> <a target=\"_blank\"href="${recipe.publisher_url}">Recipe Publisher Link</a></li><br>`);
         $('#publisher').append(`<b><em><hr class=\"my4\">`);
+        
       })
       $(".output").show();
     }

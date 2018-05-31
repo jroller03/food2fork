@@ -42,4 +42,6 @@
 
 #pics {
   border: 5px solid black;
+  width: 350px;
+  height: 250px;
 }

@@ -58,14 +58,22 @@ $(document).ready(function() {
 
     beerAPI.open("GET",beerURL,true);
     beerAPI.send();
-
-    //$("#drinks").empty();
+    $("#publisher").empty();
+    $("#drinks").empty();
     let getBeerElements = function(beer_api_response) {
       beer_api_response.forEach(function(beer) {
         $('#drinks').append(`<h1>${beer.name}</h1>`);
         $('#drinks').append(`<img id=\"beerpics\" src=\"${beer.image_url}\">`);
         $('#drinks').append(`<li><h3>Description</h3></li>`);
         $('#drinks').append(`<li>${beer.description}</li>`);
+        $('#drinks').append(`<li>abv: ${beer.abv}</li>`);
+        $('#drinks').append(`<li>ibu: ${beer.ibu}</li>`);
+        $('#drinks').append(`<li>target_fg: ${beer.target_fg}</li>`);
+        $('#drinks').append(`<li>target_og: ${beer.target_og}</li>`);
+        $('#drinks').append(`<li>ebc: ${beer.ebc}</li>`);
+        $('#drinks').append(`<li>srm: ${beer.srm}</li>`);
+        $('#drinks').append(`<li>ph: ${beer.ph}</li>`);
+
         $('#drinks').append(`<hr class="my-4">`);
       });
 

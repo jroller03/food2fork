@@ -23,7 +23,9 @@ $(document).ready(function() {
     xml.send();
 
     let getElements = function(response) {
+      $('#publisher').empty();
       response.recipes.forEach(function(recipe) {
+
         $('#publisher').append(`<h1>Title ${recipe.title}</h1>`);
         $('#publisher').append(`<img id=\"pics\" class=\"img-thumbnail\" src=\"${recipe.image_url}\" ><br>`);
         $('#publisher').append(`<li><b><em>Publisher: </b></em> ${recipe.publisher}</li>`);
@@ -36,6 +38,38 @@ $(document).ready(function() {
 
       })
       $(".output").show();
+
+    }
+
+  });
+
+  $("#beer").on("click",function(event){
+    event.preventDefault();
+
+    let beerAPI = new XMLHttpRequest();
+    let beerURL = "https://api.punkapi.com/v2/beers";
+
+    beerAPI.onreadystatechange = function() {
+      if(this.readyState === 4 && this.status === 200) {
+        let beer_api_response = JSON.parse(this.responseText);
+        getBeerElements(beer_api_response);
+      }
+    }
+
+    beerAPI.open("GET",beerURL,true);
+    beerAPI.send();
+
+    //$("#drinks").empty();
+    let getBeerElements = function(beer_api_response) {
+      beer_api_response.forEach(function(beer) {
+        $('#drinks').append(`<h1>${beer.name}</h1>`);
+        $('#drinks').append(`<img id=\"beerpics\" src=\"${beer.image_url}\">`);
+        $('#drinks').append(`<li><h3>Description</h3></li>`);
+        $('#drinks').append(`<li>${beer.description}</li>`);
+        $('#drinks').append(`<hr class="my-4">`);
+      });
+
     }
   });
+
 });
